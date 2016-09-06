@@ -1,0 +1,13 @@
+<h2>Log in</h2>
+
+<% if devise_mapping.omniauthable? %>
+  <div class="col-sm-6 login-form login-form--omniauth">
+    <div class="btn-group">
+      <% resource_class.omniauth_providers.each do |provider| %>
+        <%= link_to "Inloggen met #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %>
+      <% end %>
+    </div><!-- .btn-group -->
+  </div><!-- .login-form .login-form--omniauth -->
+<% end %>
+
+<%= render "devise/shared/links" %>
